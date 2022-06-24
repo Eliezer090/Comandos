@@ -1,0 +1,2 @@
+# Objetivo do repositório
+- Neste repoisitório como o nome dele já sugere é para comandos que por vezes podem ser dificeis de achar ou nao tão completos ou explicados, tem por objetivo auxiliar na hora de achar os comandos.
