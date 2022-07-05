@@ -4,8 +4,11 @@
     - Lista todos os recursos disponíveis no Kubernetes, geralmente utilizado para sabermos qual APIVERSION deveremos utilizar no yaml.
 ## Comando de informações:
 
-- Caso trabalhe com namespaces será preciso setar o -n NAME_NAMESPACE para poder executar os comandos, ex:
-    - kubectl logs NAME_POD -n NAME_NAMESPACE
+- Caso trabalhe com namespaces temos 2 formas de ober as informações so comando que estamos utilizando:
+    - Utilizando o nome do namespace dirretamente -n NAME_NAMESPACE, ex:
+        - kubectl logs NAME_POD -n NAME_NAMESPACE
+    - Ou podemos passar o --all-namenspaces, para listar tudo de todos os namespaces, ex:
+        -  kubectl logs NAME_POD --all-namenspaces
 - kubectl get <objeto>
     - Obs: <objeto> é o nome do recurso que queremos verificar
     - nodes
@@ -43,6 +46,11 @@
         - Exibe mais informações sobre o replicaset
 - kubectl logs <nome_do_pod>
     - Podemos verificar o log do pod
+- kubectl top pod <nome_do_pod>
+    - Utilizado para verificar a quantidade de recurso que um pod está utilizando, se rodar o mesmo e der o erro "Metrics API not available", é preciso intalar o Metric Server:
+````
+        kubectl apply -f https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yaml
+````
 ## Comandos de ações:
 - kubectl apply -f <arquivo_de_configuracao>
     - Para subir os arquivos yaml para rodar nos pods.
@@ -50,6 +58,8 @@
     - -n <namespace>
         - Para subir os arquivos para o namespace informado.
         - Exemplo: kubectl apply -f <arquivo_de_configuracao> -n <namespace>
+    - -R
+        - Realiza um apply recursivo ou seja todos os yamls que tiver na pasta ele vai executar.
 - kubectl rollout <objeto>
     - history deployment <nome_do_deployment>
         - Para verificar o histórico de alterações do deployment
