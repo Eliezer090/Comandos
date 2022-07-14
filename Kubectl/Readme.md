@@ -39,6 +39,10 @@
         - Podemos verificar os endpoints que estão rodando no cluster, e os IPS dos pods que estão vinculado a este endpoint.
     - namespaces
         - Podemos verificar os namespaces que estão no cluster.
+    - pv
+        - Utilizado para obter informações dos persistent volumes que tem no cluster.
+    - pvc
+        - Utilizado para obter informações dos persistent volumes claim que tem no cluster.
 - kubectl describe <objeto>
     - pod <nome_do_pod>
         - Podemos verificar mais informações sobre o pod, se nao colocar o <nome_do_pod> ele mostra as informações de todos os pods
